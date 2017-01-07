@@ -5,16 +5,46 @@ using UnityEngine;
 using TX;
 using TX.Game;
 
+
+public enum GameState
+{
+	Loading,
+	PostLoading,
+	InGame,
+	GameOver
+}
+
 public class GameManager : Singleton<GameManager> {
 
-	// Use this for initialization
-	void Start () {
-		
+
+	public GameState State { get; private set; }
+
+	public HashSet<MonoBehaviour> sceneInitializers = new HashSet<MonoBehaviour>();
+
+	public HashSet<MonoBehaviour> postSceneInitializers = new HashSet<MonoBehaviour>();
+
+	void Awake() {
+		State = GameState.Loading;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		switch (State) {
+		case GameState.Loading:
+			if (sceneInitializers.Count == 0)
+				State = GameState.PostLoading;
+			break;
+
+		case GameState.PostLoading:
+			if (postSceneInitializers.Count == 0)
+				State = GameState.InGame;
+			break;
+
+		case GameState.InGame:
+			break;
+		case GameState.GameOver:
+			break;
+		}
 	}
 }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 using TX;
 using TX.Game;
 
-public class ItemGenerator : BaseBehaviour {
+public class ItemGenerator : SceneInitializer {
 	
 	public GameObject[] Prefabs;
 
@@ -30,7 +30,10 @@ public class ItemGenerator : BaseBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Generate();
+	}
 
+	void Generate(){
 		int itemCount = (int)(Density * Region.Area());
 
 		for (int i = 0; i < itemCount; i++) {
@@ -56,9 +59,7 @@ public class ItemGenerator : BaseBehaviour {
 			}
 			item.localScale = new Vector3(size.x, size.y, 1);
 		}
-	}
 
-	void Update(){
-		DebugPainter.Default.DrawRect(Region);
+		InitializationComplete();
 	}
 }
