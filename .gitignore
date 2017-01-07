@@ -1,6 +1,5 @@
 *.sublime-workspace
 *.[Cc]ache
-*.meta
 
 ProjectSettings/ProjectVersion.txt
 
