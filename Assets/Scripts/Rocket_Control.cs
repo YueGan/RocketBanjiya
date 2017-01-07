@@ -6,7 +6,7 @@ using TX;
 [RequireComponent(typeof(Rigidbody2D), typeof(ConstantForce2D))]
 public class Rocket_Control : BaseBehaviour {
 
-	[Range(0.01f, 1f)]
+	[Range(0.1f, 1f)]
 	public float Handling;
 
 	/// <summary>
