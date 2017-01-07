@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Handling: 0.3
-  Force: 20
+  Force: 40
 --- !u!212 &212125150715437036
 SpriteRenderer:
   m_ObjectHideFlags: 1

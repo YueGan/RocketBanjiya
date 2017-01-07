@@ -4,7 +4,7 @@ using UnityEngine;
 using TX;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(ConstantForce2D))]
-public class Rocket_Control : BaseBehaviour {
+public class RocketControl : BaseBehaviour {
 
 	[Range(0.1f, 1f)]
 	public float Handling;
@@ -20,12 +20,10 @@ public class Rocket_Control : BaseBehaviour {
 	[Range(1, 100)]
 	public int Force;
 
-	private Rigidbody2D Rigidbody;
 	private ConstantForce2D Thrust;
 
 	void Awake()
 	{
-		Rigidbody = GetComponent<Rigidbody2D>();
 		Thrust = GetComponent<ConstantForce2D>();
 	}
 
