@@ -56,7 +56,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Handling: 0.3
-  Force: 15
+  Force: 20
 --- !u!212 &212125150715437036
 SpriteRenderer:
   m_ObjectHideFlags: 1
