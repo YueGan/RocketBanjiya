@@ -49,7 +49,7 @@ public class GameManager : Singleton<GameManager> {
 }
 
 public static class GameMetadata {
-	public static readonly Vector2 MapSize = new Vector2(100, 1280);
+	public static readonly Vector2 MapSize = new Vector2(100, 10240);
 	public static readonly Rect MapRegion = 
 		Rect.MinMaxRect(
 			-MapSize.x/2, 0,
