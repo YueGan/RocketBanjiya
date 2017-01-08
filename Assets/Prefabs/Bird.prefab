@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatrolSpeed: 8
   PatrolRange: 40
-  Mass: 0.6
+  Mass: 0.35
 --- !u!114 &114657839925689018
 MonoBehaviour:
   m_ObjectHideFlags: 1
