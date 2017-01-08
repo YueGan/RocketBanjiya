@@ -21,8 +21,28 @@ public class RocketControl : BaseBehaviour {
 	[Range(1, 100)]
 	public int Force;
 
+	public ParticleSystem Exhaust;
 	public ParticleSystem Flame;
 
+	public bool EngineOn {
+		get{return _engineOn;}
+		set{
+			if (_engineOn != value) {
+				_engineOn = value;
+
+				if (value) {
+					Thrust.relativeForce = new Vector2(0, Force);
+					Exhaust.Play();
+					Flame.Play();
+				} else {
+					Thrust.relativeForce = Vector2.zero;
+					Exhaust.Stop();
+					Flame.Stop();
+				}
+			}
+		}
+	}
+	private bool _engineOn;
 	private ConstantForce2D Thrust;
 
 	void Awake()
@@ -38,12 +58,6 @@ public class RocketControl : BaseBehaviour {
 			transform.rotation = transform.rotation * Quaternion.Euler(0, 0, -dir * MaxRotation * Handling);
 		}
 
-		if (Input.GetAxis("Vertical") == 1) {
-			Thrust.relativeForce = new Vector2(0, Force);
-			Flame.Play();
-		} else {
-			Thrust.relativeForce = Vector2.zero;
-			Flame.Stop ();
-		}
+		EngineOn = Input.GetAxis("Vertical") == 1;
 	}
 }

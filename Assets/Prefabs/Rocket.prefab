@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4153830434359662}
   - component: {fileID: 198542266376689222}
   - component: {fileID: 199228366679922944}
-  - component: {fileID: 82247796668984094}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -390,7 +389,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -790273698
+  randomSeed: 874008403
   InitialModule:
     serializedVersion: 3
     enabled: 1
