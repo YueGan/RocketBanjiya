@@ -6,6 +6,7 @@ using TX;
 [RequireComponent(typeof(Rigidbody2D), typeof(ConstantForce2D))]
 public class RocketControl : BaseBehaviour {
 
+
 	[Range(0.1f, 1f)]
 	public float Handling;
 
@@ -19,6 +20,10 @@ public class RocketControl : BaseBehaviour {
 	/// </summary>
 	[Range(1, 100)]
 	public int Force;
+
+	public ParticleSystem Flame;
+
+
 
 	private ConstantForce2D Thrust;
 
@@ -37,12 +42,16 @@ public class RocketControl : BaseBehaviour {
 	}
 
 	[InspectorButton("Turn On")]
-	void TurnOn(){
+	public void TurnOn(){
 		Thrust.relativeForce = new Vector2(0, Force);
+
+		Flame.Play ();
+
 	}
 
 	[InspectorButton("Turn Off")]
 	void TurnOff(){
 		Thrust.relativeForce = Vector2.zero;
+		Flame.Stop ();
 	}
 }

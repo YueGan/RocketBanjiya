@@ -87,7 +87,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0.3
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Handling: 0.3
   Force: 40
+  Flame: {fileID: 198542266376689222}
 --- !u!198 &198542266376689222
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -169,8 +170,8 @@ ParticleSystem:
   lengthInSec: 8
   speed: 1
   looping: 1
-  prewarm: 1
-  playOnAwake: 1
+  prewarm: 0
+  playOnAwake: 0
   autoRandomSeed: 1
   startDelay:
     scalar: 0
@@ -214,7 +215,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1723786011
+  randomSeed: 1043269338
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2889,5 +2890,5 @@ ConstantForce2D:
   m_GameObject: {fileID: 1991555781631236}
   m_Enabled: 1
   m_Force: {x: 0, y: 0}
-  m_RelativeForce: {x: 0, y: 40}
+  m_RelativeForce: {x: 0, y: 0}
   m_Torque: 0
