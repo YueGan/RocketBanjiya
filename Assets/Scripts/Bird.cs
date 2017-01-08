@@ -5,12 +5,14 @@ using UnityEngine;
 using TX;
 using TX.Game;
 
-public class HorizontalPatrol : BaseBehaviour {
+public class Bird : BaseBehaviour {
 	[Range(0, 10)]
 	public float PatrolSpeed;
 
 	[Range(1, 50)]
 	public float PatrolRange;
+
+	public float Mass;
 
 	private SpriteRenderer sprite;
 	private float patrolCenter;
@@ -38,5 +40,23 @@ public class HorizontalPatrol : BaseBehaviour {
 			sprite.flipX = false;
 		if (position.x > patrolCenter + PatrolRange / 2)
 			sprite.flipX = true;
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.tag == "Player" && this.enabled) {
+			// stick to the rocket...
+
+			Rigidbody2D rocket = other.GetComponent<Rigidbody2D> ();
+			rocket.mass += Mass;
+
+			transform.SetParent (other.transform);
+			transform.localPosition = 
+				new Vector3(
+					transform.localPosition.x,
+					transform.localPosition.y,
+					Random.value > 0.5 ? -1 : 1);
+			this.enabled = false;
+			GetComponent<EnforceBoundary> ().enabled = false;
+		}
 	}
 }
