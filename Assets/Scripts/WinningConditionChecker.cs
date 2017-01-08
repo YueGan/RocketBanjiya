@@ -27,8 +27,15 @@ public class WinningConditionChecker : BaseBehaviour {
 			rocket.GetComponent<Rigidbody2D> ().simulated = false;
 			rocket.transform.SetParent (other.transform);
 
+			DetonateRocket();
 			GameManager.Instance.GameOver (false);
-			gameObject.SetActive (false);
 		}
+	}
+
+	void DetonateRocket(){
+		GameObject explosion = Instantiate(rocket.Explosion);
+		explosion.transform.position = rocket.transform.position;
+
+		rocket.gameObject.SetActive(false);
 	}
 }

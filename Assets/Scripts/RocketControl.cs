@@ -24,6 +24,8 @@ public class RocketControl : BaseBehaviour {
 	public ParticleSystem Exhaust;
 	public ParticleSystem Flame;
 
+	public GameObject Explosion;
+
 	public bool EngineOn {
 		get{return _engineOn;}
 		set{
@@ -59,5 +61,12 @@ public class RocketControl : BaseBehaviour {
 		}
 
 		EngineOn = Input.GetAxis("Vertical") == 1;
+	}
+
+	[InspectorButton("Teleport to Valley")]
+	void TeleportToValley(){
+		Vector3 pos = transform.position;
+		pos.y = 2400;
+		transform.position = pos;
 	}
 }

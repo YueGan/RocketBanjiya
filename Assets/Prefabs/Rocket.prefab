@@ -471,6 +471,7 @@ MonoBehaviour:
   Force: 35
   Exhaust: {fileID: 198542266376689222}
   Flame: {fileID: 198515167924388494}
+  Explosion: {fileID: 1833154947576684, guid: a38cd663fc687488e8f6a221e60b3664, type: 2}
 --- !u!114 &114701894434104626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,7 +491,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1280498381789720}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 0
@@ -3133,7 +3134,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1592394565397746}
   serializedVersion: 5
   lengthInSec: 8
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 0
