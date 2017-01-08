@@ -75,10 +75,17 @@ public class RocketControl : BaseBehaviour {
 		EngineOn = Input.GetAxis("Vertical") == 1;
 	}
 
-	[InspectorButton("Teleport to Valley")]
-	void TeleportToValley(){
+	[InspectorButton("Teleport to below Valley")]
+	void TeleportToBelowValley(){
 		Vector3 pos = transform.position;
 		pos.y = 2400;
+		transform.position = pos;
+	}
+
+	[InspectorButton("Teleport to above Valley")]
+	void TeleportToAboveValley(){
+		Vector3 pos = transform.position;
+		pos.y = 2560;
 		transform.position = pos;
 	}
 }
