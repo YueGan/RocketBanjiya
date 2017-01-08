@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 using TX;
 
@@ -88,5 +89,9 @@ public class RocketControl : BaseBehaviour {
 		Vector3 pos = transform.position;
 		pos.y = 2560;
 		transform.position = pos;
+	}
+
+	public void ReloadScene(){
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 	}
 }
