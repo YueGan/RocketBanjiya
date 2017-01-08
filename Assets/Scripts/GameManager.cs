@@ -16,12 +16,20 @@ public enum GameState
 
 public class GameManager : Singleton<GameManager> {
 
-
 	public GameState State { get; private set; }
 
 	public HashSet<MonoBehaviour> sceneInitializers = new HashSet<MonoBehaviour>();
 
 	public HashSet<MonoBehaviour> postSceneInitializers = new HashSet<MonoBehaviour>();
+
+	public Transform ScoreRegion;
+	public Transform FailRegion;
+
+	public void GameOver(bool won){
+		if (GameState.InGame == State) {
+			State = GameState.GameOver;
+		}
+	}
 
 	void Awake() {
 		State = GameState.Loading;
