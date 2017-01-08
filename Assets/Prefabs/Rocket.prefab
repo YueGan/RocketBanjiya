@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1592394565397746}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -1.28, z: 1}
+  m_LocalPosition: {x: 0.0001073256, y: -1.42, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4904352893294924}
@@ -214,12 +214,12 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1721540767
+  randomSeed: 1723786011
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
-      scalar: 6.97
+      scalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -258,7 +258,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 10.12
+      scalar: 22.97
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -387,10 +387,10 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.7058824, g: 0.7882353, b: 0.6117647, a: 0.7490196}
+      maxColor: {r: 0.9490196, g: 0.89411765, b: 0.28627452, a: 0.7764706}
       minMaxState: 0
     startSize:
-      scalar: 5
+      scalar: 5.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -585,7 +585,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startRotation:
-      scalar: 0
+      scalar: 0.009250244
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -623,7 +623,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    randomizeRotationDirection: 0
+    randomizeRotationDirection: 0.22
     maxNumParticles: 1000
     size3D: 0
     rotation3D: 0
@@ -671,7 +671,7 @@ ParticleSystem:
     enabled: 1
     type: 4
     radius: 0.23
-    angle: 38.46
+    angle: 0
     length: 5
     boxX: 1
     boxY: 1
@@ -693,7 +693,7 @@ ParticleSystem:
     enabled: 1
     serializedVersion: 3
     rateOverTime:
-      scalar: 50
+      scalar: 23.7
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -984,7 +984,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     curve:
-      scalar: 0.7853982
+      scalar: 0.7853981
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2139,7 +2139,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     curve:
-      scalar: 0.7853982
+      scalar: 0.7853981
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2889,5 +2889,5 @@ ConstantForce2D:
   m_GameObject: {fileID: 1991555781631236}
   m_Enabled: 1
   m_Force: {x: 0, y: 0}
-  m_RelativeForce: {x: 0, y: 0}
+  m_RelativeForce: {x: 0, y: 40}
   m_Torque: 0
