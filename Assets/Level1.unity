@@ -1019,6 +1019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 1516563336}
+  Rocket: {fileID: 0}
   Destination: {fileID: 1292136780}
   ScoreRegion: {fileID: 537067149}
   FailRegion: {fileID: 1406573826}
@@ -1241,11 +1242,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114579928459841456, guid: 98483b2b0d2584dec940506bd9fe89cd,
-        type: 2}
-      propertyPath: LaunchEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4904352893294924, guid: 98483b2b0d2584dec940506bd9fe89cd, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3.34
@@ -1290,34 +1286,9 @@ Prefab:
       objectReference: {fileID: 1955011807}
     - target: {fileID: 114579928459841456, guid: 98483b2b0d2584dec940506bd9fe89cd,
         type: 2}
-      propertyPath: LaunchEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114579928459841456, guid: 98483b2b0d2584dec940506bd9fe89cd,
-        type: 2}
-      propertyPath: LaunchEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114579928459841456, guid: 98483b2b0d2584dec940506bd9fe89cd,
-        type: 2}
-      propertyPath: LaunchEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114579928459841456, guid: 98483b2b0d2584dec940506bd9fe89cd,
-        type: 2}
       propertyPath: LaunchEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1811400051}
-    - target: {fileID: 114579928459841456, guid: 98483b2b0d2584dec940506bd9fe89cd,
-        type: 2}
-      propertyPath: LaunchEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: GameStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 114579928459841456, guid: 98483b2b0d2584dec940506bd9fe89cd,
-        type: 2}
-      propertyPath: LaunchEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98483b2b0d2584dec940506bd9fe89cd, type: 2}
   m_IsPrefabParent: 0

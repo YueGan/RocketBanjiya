@@ -47,11 +47,12 @@ public class RocketControl : BaseBehaviour {
 					Thrust.relativeForce = new Vector2(0, Force);
 					Exhaust.Play();
 					Flame.Play();
-					audioSource.Play ();
+					audioSource.mute = false;
 				} else {
 					Thrust.relativeForce = Vector2.zero;
 					Exhaust.Stop();
 					Flame.Stop();
+					audioSource.mute = true;
 				}
 			}
 		}
