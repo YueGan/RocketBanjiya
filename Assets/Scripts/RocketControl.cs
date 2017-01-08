@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 using TX;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(ConstantForce2D))]
@@ -26,6 +28,9 @@ public class RocketControl : BaseBehaviour {
 
 	public GameObject Explosion;
 
+	public UnityEvent LaunchEvent;
+	private bool launched = false;
+
 	public bool EngineOn {
 		get{return _engineOn;}
 		set{
@@ -33,6 +38,11 @@ public class RocketControl : BaseBehaviour {
 				_engineOn = value;
 
 				if (value) {
+					if (!launched) {
+						launched = true;
+						LaunchEvent.Invoke();
+					}
+
 					Thrust.relativeForce = new Vector2(0, Force);
 					Exhaust.Play();
 					Flame.Play();
