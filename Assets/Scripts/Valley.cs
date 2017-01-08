@@ -11,6 +11,10 @@ public class Valley : BaseBehaviour {
 
 	public Transform BuffAnimation;
 
+	public void Buff(float delay){
+		Invoke("StartBuff", delay);
+	}
+
 	[InspectorButton("Buff")]
 	void StartBuff(){
 		SpriteRenderer renderer = GetComponent<SpriteRenderer>();

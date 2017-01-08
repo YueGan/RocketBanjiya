@@ -24,6 +24,7 @@ public class GameManager : Singleton<GameManager> {
 	public HashSet<MonoBehaviour> postSceneInitializers = new HashSet<MonoBehaviour>();
 
 	public Camera MainCamera;
+	public GameObject Rocket;
 
 	public Transform Destination;
 
@@ -37,6 +38,9 @@ public class GameManager : Singleton<GameManager> {
 			if (won) {
 				MainCamera.GetComponent<Camera2DFollow>().target = Destination;
 				MainCamera.GetComponent<CameraSmoothZoom>().TargetZoom = 25;
+
+				Destination.GetComponent<Valley>().Buff(1);
+				Rocket.gameObject.SetActive(false);
 			}
 		}
 	}
@@ -50,6 +54,7 @@ public class GameManager : Singleton<GameManager> {
 
 	void Awake() {
 		State = GameState.Loading;
+		Rocket = GameObject.FindWithTag("Player");
 	}
 	
 	// Update is called once per frame
