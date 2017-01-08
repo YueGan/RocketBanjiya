@@ -25,6 +25,7 @@ public class RocketControl : BaseBehaviour {
 
 	public ParticleSystem Exhaust;
 	public ParticleSystem Flame;
+	public AudioSource audioSource;
 
 	public GameObject Explosion;
 
@@ -46,6 +47,7 @@ public class RocketControl : BaseBehaviour {
 					Thrust.relativeForce = new Vector2(0, Force);
 					Exhaust.Play();
 					Flame.Play();
+					audioSource.Play ();
 				} else {
 					Thrust.relativeForce = Vector2.zero;
 					Exhaust.Stop();

@@ -174,8 +174,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1991555781631236}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.34, y: 9.02, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.012779258, w: 0.9999184}
+  m_LocalPosition: {x: -2.320418, y: 9.152898, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4153830434359662}
@@ -373,11 +373,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 427a0d4fb3872460c998e4a3977b2cec, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 8dbaaf7ce48e74d7995439271601181a, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.483
   m_Pitch: 0.85
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -471,6 +471,7 @@ MonoBehaviour:
   Force: 35
   Exhaust: {fileID: 198542266376689222}
   Flame: {fileID: 198515167924388494}
+  audioSource: {fileID: 82355399217131930}
   Explosion: {fileID: 1833154947576684, guid: a38cd663fc687488e8f6a221e60b3664, type: 2}
   LaunchEvent:
     m_PersistentCalls:
@@ -518,7 +519,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1280498381789720}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 0
@@ -565,7 +566,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -130832874
+  randomSeed: -1743095976
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3161,7 +3162,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1592394565397746}
   serializedVersion: 5
   lengthInSec: 8
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 0
@@ -3208,7 +3209,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1009606007
+  randomSeed: 232511555
   InitialModule:
     serializedVersion: 3
     enabled: 1
