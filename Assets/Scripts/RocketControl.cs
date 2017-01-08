@@ -23,8 +23,6 @@ public class RocketControl : BaseBehaviour {
 
 	public ParticleSystem Flame;
 
-
-
 	private ConstantForce2D Thrust;
 
 	void Awake()
@@ -39,19 +37,13 @@ public class RocketControl : BaseBehaviour {
 		{
 			transform.rotation = transform.rotation * Quaternion.Euler(0, 0, -dir * MaxRotation * Handling);
 		}
-	}
 
-	[InspectorButton("Turn On")]
-	public void TurnOn(){
-		Thrust.relativeForce = new Vector2(0, Force);
-
-		Flame.Play ();
-
-	}
-
-	[InspectorButton("Turn Off")]
-	void TurnOff(){
-		Thrust.relativeForce = Vector2.zero;
-		Flame.Stop ();
+		if (Input.GetAxis("Vertical") == 1) {
+			Thrust.relativeForce = new Vector2(0, Force);
+			Flame.Play();
+		} else {
+			Thrust.relativeForce = Vector2.zero;
+			Flame.Stop ();
+		}
 	}
 }
