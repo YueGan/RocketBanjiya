@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 using TX;
 using TX.Game;
@@ -25,22 +26,29 @@ public class GameManager : Singleton<GameManager> {
 
 	public Camera MainCamera;
 	public GameObject Rocket;
+	public UnityEvent GameOverEvent;
 
 	public Transform Destination;
 
 	public Transform ScoreRegion;
 	public Transform FailRegion;
 
+	public AudioClip WinningSound;
+
 	public void GameOver(bool won){
 		if (GameState.InGame == State) {
 			State = GameState.GameOver;
-
+			GameOverEvent.Invoke ();
 			if (won) {
 				MainCamera.GetComponent<Camera2DFollow>().target = Destination;
 				MainCamera.GetComponent<CameraSmoothZoom>().TargetZoom = 25;
-
+				MainCamera.GetComponent<AudioSource> ().mute = true;
 				Destination.GetComponent<Valley>().Buff(1);
 				Rocket.gameObject.SetActive(false);
+
+				var audioSrc = GetComponent<AudioSource> ();
+				audioSrc.clip = WinningSound;
+				audioSrc.Play ();
 			}
 		}
 	}
