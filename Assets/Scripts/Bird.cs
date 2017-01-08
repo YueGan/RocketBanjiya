@@ -14,12 +14,17 @@ public class Bird : BaseBehaviour {
 
 	public float Mass;
 
+	public AudioClip HitSound;
+
+	private AudioSource sfxSource;
 	private SpriteRenderer sprite;
 	private float patrolCenter;
 
 	void Awake(){
 		patrolCenter = transform.position.x + PatrolRange / 2;
 		sprite = GetComponent<SpriteRenderer> ();
+
+		sfxSource = GameManager.Instance.GetComponent<AudioSource> ();
 	}
 
 	// Update is called once per frame
@@ -57,6 +62,9 @@ public class Bird : BaseBehaviour {
 					Random.value > 0.5 ? -1 : 1);
 			this.enabled = false;
 			GetComponent<EnforceBoundary> ().enabled = false;
+
+			sfxSource.clip = HitSound;
+			sfxSource.Play ();
 		}
 	}
 }

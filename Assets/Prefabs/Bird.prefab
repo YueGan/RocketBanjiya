@@ -71,6 +71,7 @@ MonoBehaviour:
   PatrolSpeed: 8
   PatrolRange: 40
   Mass: 0.35
+  HitSound: {fileID: 8300000, guid: 600d9fbfbc4754879806ebf36b83b9c0, type: 3}
 --- !u!114 &114657839925689018
 MonoBehaviour:
   m_ObjectHideFlags: 1
