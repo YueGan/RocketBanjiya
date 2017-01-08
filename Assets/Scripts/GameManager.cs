@@ -4,12 +4,13 @@ using UnityEngine;
 
 using TX;
 using TX.Game;
-
+using UnityStandardAssets._2D;
 
 public enum GameState
 {
 	Loading,
 	PostLoading,
+	Ready,
 	InGame,
 	GameOver
 }
@@ -22,12 +23,28 @@ public class GameManager : Singleton<GameManager> {
 
 	public HashSet<MonoBehaviour> postSceneInitializers = new HashSet<MonoBehaviour>();
 
+	public Camera MainCamera;
+
+	public Transform Destination;
+
 	public Transform ScoreRegion;
 	public Transform FailRegion;
 
 	public void GameOver(bool won){
 		if (GameState.InGame == State) {
 			State = GameState.GameOver;
+
+			if (won) {
+				MainCamera.GetComponent<Camera2DFollow>().target = Destination;
+				MainCamera.GetComponent<CameraSmoothZoom>().TargetZoom = 25;
+			}
+		}
+	}
+
+	public void GameStart(){
+		if (GameState.Ready == State) {
+			State = GameState.InGame;
+			MainCamera.GetComponent<CameraSmoothZoom>().TargetZoom = 20;
 		}
 	}
 
@@ -39,13 +56,16 @@ public class GameManager : Singleton<GameManager> {
 	void Update () {
 		switch (State) {
 		case GameState.Loading:
-			if (sceneInitializers.Count == 0)
+			if (sceneInitializers.Count == 0) {
 				State = GameState.PostLoading;
+			}
 			break;
 
 		case GameState.PostLoading:
-			if (postSceneInitializers.Count == 0)
-				State = GameState.InGame;
+			if (postSceneInitializers.Count == 0) {
+				MainCamera.GetComponent<CameraSmoothZoom>().TargetZoom = 5;
+				State = GameState.Ready;
+			}
 			break;
 
 		case GameState.InGame:
